@@ -1,6 +1,6 @@
 # @mocsy/systemstat
 
-**@mocsy/systemstat:** Get memory and processor load on a node.js host[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[F[D[C[B[C[C[C[C[C[C[C[C[C[C[C[CA Node.js nat[2~ive module to get various host system stats like memory/cpu load.
+**@mocsy/systemstat:** Node.js native module to get various host system stats like memory/cpu load.
 
 This project was bootstrapped by [create-neon](https://www.npmjs.com/package/create-neon).
 

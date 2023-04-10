@@ -1,7 +1,7 @@
 [package]
-name = "@mocsy/systemstat"
+name = "node-systemstat"
 version = "0.1.0"
-description = "Get memory and processor load on a node.js host\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[F\u001b[D\u001b[C\u001b[B\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[CA Node.js nat\u001b[2~ive module to get various host system stats like memory/cpu load."
+description = "A Node.js native module to get various host system stats like memory/cpu load."
 authors = ["Andras Mocsary"]
 license = "MIT"
 edition = "2018"
@@ -12,7 +12,8 @@ crate-type = ["cdylib"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
+[dependencies.systemstat]
+version = "0.2.3"
 
 [dependencies.neon]
 version = "0.10"
