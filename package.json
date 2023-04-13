@@ -1,6 +1,6 @@
 {
   "name": "@mocsy/node-systemstat",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Node.js native module to get various host system stats like memory/cpu load.",
   "main": "index.node",
   "scripts": {
