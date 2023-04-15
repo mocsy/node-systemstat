@@ -9,6 +9,7 @@
     "build-debug": "npm run build --",
     "build-release": "npm run build -- --release",
     "install": "PREBUILDS_ONLY=1 node-gyp-build",
+    "install": "",
     "build-all": "npm-run-all build:**",
     "build:linux-riscv64gc": "cross build --release --target riscv64gc-unknown-linux-gnu",
     "build:linux-aarch64": "cross build --release --target aarch64-unknown-linux-gnu",
