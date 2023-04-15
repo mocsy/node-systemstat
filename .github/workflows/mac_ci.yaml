@@ -1,12 +1,13 @@
-name: test suite
+name: Build release targets
 on: [workflow_dispatch]
 
 jobs:
   test:
-    name: cargo test
+    name: build all releases
     runs-on: macos-12
     steps:
       - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@stable
       - uses: actions/setup-node@v3
+      - run: npm i
       - run: npm run build 
