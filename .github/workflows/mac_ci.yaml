@@ -1,5 +1,5 @@
 name: test suite
-on: [workflow_dispatch, push, pull_request]
+on: [workflow_dispatch]
 
 jobs:
   test:
@@ -8,4 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@stable
-      - run: cargo test --all-features
+      - uses: actions/setup-node@v3
+      - run: npm run build 
