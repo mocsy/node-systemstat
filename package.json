@@ -26,6 +26,8 @@
     "build:win64": "cross build --release --target x86_64-pc-windows-gnu",
     "build:aix-ppc": "RUSTFLAGS=\"-C target-feature=-crt-static\" cross build --release --target powerpc64-ibm-aix",
     "build:aix-ppc": "echo skip build:aix-ppc until aix support for std arrives in rust",
+    "build:darwin-arm64": "cross build --release --target aarch64-apple-darwin",
+    "build:darwin-x64": "cross build --release --target x86_64-apple-darwin",
     "test": "cargo test"
   },
   "author": "Andras Mocsary",
