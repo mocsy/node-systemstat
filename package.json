@@ -4,16 +4,38 @@
   "description": "A Node.js native module to get various host system stats like memory/cpu load.",
   "main": "index.node",
   "scripts": {
-    "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
+    "build": "npm run build-all && node copybuilds.js",
+    "build-dev": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
     "build-debug": "npm run build --",
     "build-release": "npm run build -- --release",
-    "install": "npm run build-release",
+    "install": "PREBUILDS_ONLY=1 node-gyp-build",
+    "build-all": "npm-run-all build:**",
+    "build:linux-riscv64gc": "cross build --release --target riscv64gc-unknown-linux-gnu",
+    "build:linux-aarch64": "cross build --release --target aarch64-unknown-linux-gnu",
+    "build:linux-aarch64-musl": "RUSTFLAGS=\"-C target-feature=-crt-static\" cross build --release --target aarch64-unknown-linux-musl",
+    "build:linux-armv7": "cross build --release --target armv7-unknown-linux-gnueabi",
+    "build:linux-armv7-musl": "RUSTFLAGS=\"-C target-feature=-crt-static\" cross build --release --target armv7-unknown-linux-musleabi",
+    "build:linux-s390x": "cross build --release --target s390x-unknown-linux-gnu",
+    "build:linux-ppc-le": "cross build --release --target powerpc64le-unknown-linux-gnu",
+    "build:linux-ppc": "cross build --release --target powerpc64-unknown-linux-gnu",
+    "build:linux32": "cross build --release --target i686-unknown-linux-gnu",
+    "build:linux32-musl": "RUSTFLAGS=\"-C target-feature=-crt-static\" cross build --release --target i686-unknown-linux-musl",
+    "build:linux64": "cross build --release --target x86_64-unknown-linux-gnu",
+    "build:linux64-musl": "RUSTFLAGS=\"-C target-feature=-crt-static\" cross build --release --target x86_64-unknown-linux-musl",
+    "build:win32": "cross build --release --target i686-pc-windows-gnu",
+    "build:win64": "cross build --release --target x86_64-pc-windows-gnu",
+    "build:aix-ppc": "RUSTFLAGS=\"-C target-feature=-crt-static\" cross build --release --target powerpc64-ibm-aix",
+    "build:aix-ppc": "echo skip build:aix-ppc until aix support for std arrives in rust",
     "test": "cargo test"
   },
   "author": "Andras Mocsary",
   "license": "MIT",
   "devDependencies": {
     "cargo-cp-artifact": "^0.1"
+  },
+  "dependencies": {
+    "node-gyp-build": "^4.6.0",
+    "npm-run-all": "^4.1.5"
   },
   "repository": {
     "type": "git",

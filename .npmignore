@@ -3,4 +3,5 @@ Cargo.lock
 Cargo.toml
 release
 debug
+target
 .github
