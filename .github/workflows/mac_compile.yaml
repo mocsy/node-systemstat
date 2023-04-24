@@ -1,10 +1,10 @@
-name: Build release targets
-on: [workflow_dispatch]
+name: Mac compline release
+on: [workflow_call]
 
 jobs:
   build-release:
-    name: build all releases
-    runs-on: macos-12
+    name: Mac compline release
+    runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v3

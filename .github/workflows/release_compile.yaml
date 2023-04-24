@@ -1,0 +1,9 @@
+name: Compile releases
+# on: [workflow_dispatch, push, pull_request]
+on: [workflow_dispatch]
+
+jobs:
+  compile-mac:
+    uses: ./.github/workflows/mac_compile.yaml
+  compile-linux:
+    uses: ./.github/workflows/linux_compile.yaml
