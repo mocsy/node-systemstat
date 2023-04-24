@@ -17,15 +17,11 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-build-
 
-      # - uses: dtolnay/rust-toolchain@stable
-      #   with:
-      #     targets: i686-unknown-linux-gnu
-      # - uses: actions/setup-node@v3
-      # - uses: docker-practice/actions-setup-docker@master
-      #   timeout-minutes: 12
-      # - run: cargo install cargo-binstall
-      - run: cargo install cross --git https://github.com/cross-rs/cross
-      # - run: cargo binstall cross
+      - run: curl -L -O https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
+      - run: tar -xzf cargo-binstall-x86_64-unknown-linux-musl.tgz
+      - run: mv cargo-binstall $HOME/.cargo/bin
+      # - run: cargo install cross --git https://github.com/cross-rs/cross
+      - run: cargo binstall cross
       - run: npm i
       - run: npm run build
 
