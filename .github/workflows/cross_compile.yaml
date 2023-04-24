@@ -1,20 +1,22 @@
-name: Mac compline release
+name: Cross compline release
 on: [workflow_call]
 
 jobs:
   build-release:
-    name: Mac compline release
+    name: Cross compline release
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: i686-unknown-linux-gnu
-      - uses: actions/setup-node@v3
-      - uses: docker-practice/actions-setup-docker@master
-        timeout-minutes: 12
+      # - uses: dtolnay/rust-toolchain@stable
+      #   with:
+      #     targets: i686-unknown-linux-gnu
+      # - uses: actions/setup-node@v3
+      # - uses: docker-practice/actions-setup-docker@master
+      #   timeout-minutes: 12
+      # - run: cargo install cargo-binstall
       - run: cargo install cross --git https://github.com/cross-rs/cross
+      # - run: cargo binstall cross
       - run: npm i
       - run: npm run build
 
