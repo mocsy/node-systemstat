@@ -1,9 +1,9 @@
-name: Ubuntu release builds
+name: Linux compline release
 on: [workflow_call]
 
 jobs:
   build-release:
-    name: Ubuntu release builds
+    name: Linux compline release
     runs-on: ubuntu-latest
 
     steps:

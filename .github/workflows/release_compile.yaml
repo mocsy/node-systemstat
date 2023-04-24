@@ -6,4 +6,4 @@ jobs:
   compile-mac:
     uses: ./.github/workflows/mac_compile.yaml
   compile-linux:
-    uses: ./.github/workflows/linux_compile.yaml
+    uses: ./.github/workflows/cross_compile.yaml
