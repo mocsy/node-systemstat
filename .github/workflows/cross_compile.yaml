@@ -8,20 +8,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      # cache the build assets so they dont recompile every time.
-      - name: Cache Rust dependencies
-        uses: actions/cache/save@v3
-        id: cache
-        with:
-          path: target
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/Cargo.lock') }}
-
-      - name: Restore dached Rust dependencies
-        uses: actions/cache/restore@v3
-        id: restore-cache
-        with:
-          path: target
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/Cargo.lock') }}
+      - uses: Swatinem/rust-cache@v2
 
       - run: curl -L -O https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
       - run: tar -xzf cargo-binstall-x86_64-unknown-linux-musl.tgz
