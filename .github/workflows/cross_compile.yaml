@@ -8,6 +8,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      # cache the build assets so they dont recompile every time.
+      - name: Cache Rust dependencies
+        uses: actions/cache@v1.0.1
+        with:
+          path: target
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-
+
       # - uses: dtolnay/rust-toolchain@stable
       #   with:
       #     targets: i686-unknown-linux-gnu
