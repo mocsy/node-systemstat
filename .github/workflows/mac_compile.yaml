@@ -18,12 +18,20 @@ jobs:
       # - run: npm i
       # - run: npm run build
       - run: cargo build --release --target aarch64-apple-darwin
-      - uses: actions/upload-artifact@v3
-        with:
-          name: darwin-arm64.node
-          path: target/aarch64-apple-darwin/release/libnode_systemstat.dylib
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: darwin-arm64.node
+      #     path: target/aarch64-apple-darwin/release/libnode_systemstat.dylib
       - run: cargo build --release --target x86_64-apple-darwin
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: darwin-x64.node
+      #     path: target/x86_64-apple-darwin/release/libnode_systemstat.dylib
+
       - uses: actions/upload-artifact@v3
         with:
-          name: darwin-x64.node
-          path: target/x86_64-apple-darwin/release/libnode_systemstat.dylib
+          name: mac-targets
+          path: |
+            target/**/*.so
+            target/**/*.dll
+            target/**/*.dylib

@@ -4,7 +4,7 @@
   "description": "A Node.js native module to get various host system stats like memory/cpu load.",
   "main": "index.node",
   "scripts": {
-    "build": "npm run build-all && node copybuilds.js",
+    "build": "npm run build-all",
     "build-dev": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
     "build-debug": "npm run build --",
     "build-release": "npm run build -- --release",
@@ -31,6 +31,7 @@
     "build:darwin-arm64": "echo skip build:darwin-arm64 until Apple gives support to build on linux",
     "build:darwin-x64": "cross build --release --target x86_64-apple-darwin",
     "build:darwin-x64": "echo skip build:darwin-x64 until Apple gives support to build on linux",
+    "copy": "node copybuilds.js",
     "test": "cargo test"
   },
   "author": "Andras Mocsary",
