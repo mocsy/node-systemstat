@@ -21,17 +21,17 @@ jobs:
       - run: tar -xzf cargo-binstall-x86_64-unknown-linux-musl.tgz
       - run: mv cargo-binstall $HOME/.cargo/bin
       # - run: cargo install cross --git https://github.com/cross-rs/cross
-      - run: cargo binstall cross
+      - run: cargo binstall --no-confirm --no-symlinks cross
       - run: npm i
       - run: npm run build
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: linux-targets
-          path: |
-            target/**/*.so
-            target/**/*.dll
-            target/**/*.dylib
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: linux-targets
+      #     path: |
+      #       target/**/*.so
+      #       target/**/*.dll
+      #       target/**/*.dylib
 
       # - uses: actions/upload-artifact@v3
       #   with:

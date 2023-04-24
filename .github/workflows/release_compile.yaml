@@ -5,5 +5,18 @@ on: [workflow_dispatch]
 jobs:
   compile-mac:
     uses: ./.github/workflows/mac_compile.yaml
-  compile-linux:
+  compile-linux-windows:
     uses: ./.github/workflows/cross_compile.yaml
+  
+  upload-compiled-targets:
+    needs: [compile-mac, compile-linux-windows]
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/upload-artifact@v3
+        with:
+          name: all-targets
+          path: |
+            target/**/*.so
+            target/**/*.dll
+            target/**/*.dylib
