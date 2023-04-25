@@ -18,65 +18,10 @@ jobs:
       - run: npm i
       - run: npm run build
 
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-targets
-      #     path: |
-      #       target/**/*.so
-      #       target/**/*.dll
-      #       target/**/*.dylib
-
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-arm64.node
-      #     path: target/aarch64-unknown-linux-gnu/release/libnode_systemstat.so
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-arm64-musl.node
-      #     path: target/aarch64-unknown-linux-musl/release/libnode_systemstat.so
-
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-armv7l.node
-      #     path: target/armv7-unknown-linux-gnueabi/release/libnode_systemstat.so
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-armv7l-musl.node
-      #     path: target/armv7-unknown-linux-musleabi/release/libnode_systemstat.so
-
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-x86.node
-      #     path: target/i686-unknown-linux-gnu/release/libnode_systemstat.so
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-x86-musl.node
-      #     path: target/i686-unknown-linux-musl/release/libnode_systemstat.so
-
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-x64.node
-      #     path: target/x86_64-unknown-linux-gnu/release/libnode_systemstat.so
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-x64-musl.node
-      #     path: target/x86_64-unknown-linux-musl/release/libnode_systemstat.so
-
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-ppc64.node
-      #     path: target/powerpc64-unknown-linux-gnu/release/libnode_systemstat.so
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-ppc64le.node
-      #     path: target/powerpc64le-unknown-linux-gnu/release/libnode_systemstat.so
-
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-s390x.node
-      #     path: target/s390x-unknown-linux-gnu/release/libnode_systemstat.so
-
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: linux-riskv64.node
-      #     path: target/riscv64gc-unknown-linux-gnu/release/libnode_systemstat.so
+      - uses: actions/upload-artifact@v3
+        with:
+          name: linux-windows-targets
+          path: |
+            target/**/*.so
+            target/**/*.dll
+            target/**/*.dylib
