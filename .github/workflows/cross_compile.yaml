@@ -9,9 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: Swatinem/rust-cache@v2
-      - uses: ScribeMD/docker-cache@0.3.3
-        with:
-          key: docker-${{ runner.os }}-cross-latest
 
       # - run: curl -L -O https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
       # - run: tar -xzf cargo-binstall-x86_64-unknown-linux-musl.tgz
