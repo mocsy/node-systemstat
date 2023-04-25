@@ -29,10 +29,10 @@ jobs:
       #     name: darwin-x64.node
       #     path: target/x86_64-apple-darwin/release/libnode_systemstat.dylib
 
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: mac-targets
-      #     path: |
-      #       target/**/*.so
-      #       target/**/*.dll
-      #       target/**/*.dylib
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mac-targets
+          path: |
+            target/**/*.so
+            target/**/*.dll
+            target/**/*.dylib
