@@ -19,8 +19,8 @@ jobs:
       - name: Display structure of downloaded files
         run: |
           mkdir target
-          mv linux-windows-targets/ target
-          mv mac-targets/ target
+          mv linux-windows-targets/* target
+          mv mac-targets/* target
           ls -R
 
       - name: Copy build artifacts from targets to node native dirs
