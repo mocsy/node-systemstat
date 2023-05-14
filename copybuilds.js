@@ -14,8 +14,8 @@ const targets = [
     { build: "target/powerpc64le-unknown-linux-gnu/release/libnode_systemstat.so", prebuildDir: "prebuilds/linux-ppc64le", module: "node.napi.node" },
     { build: "target/s390x-unknown-linux-gnu/release/libnode_systemstat.so", prebuildDir: "prebuilds/linux-s390x", module: "node.napi.node" },
     { build: "target/riscv64gc-unknown-linux-gnu/release/libnode_systemstat.so", prebuildDir: "prebuilds/linux-riskv64", module: "node.napi.node" },
-    { build: "target/aarch64-apple-darwin/release/libnode_systemstat.so", prebuildDir: "prebuilds/darwin-arm64", module: "node.napi.node" },
-    { build: "target/x86_64-apple-darwin/release/libnode_systemstat.so", prebuildDir: "prebuilds/darwin-x64", module: "node.napi.node" },
+    { build: "target/aarch64-apple-darwin/release/libnode_systemstat.dylib", prebuildDir: "prebuilds/darwin-arm64", module: "node.napi.node" },
+    { build: "target/x86_64-apple-darwin/release/libnode_systemstat.dylib", prebuildDir: "prebuilds/darwin-x64", module: "node.napi.node" },
     // skip until aix support for std arrives in rust
     // { build: "target/powerpc64-ibm-aix/release/libnode_systemstat.dll", prebuildDir: "prebuilds/win-x64", module: "node.napi.node" },
 ]
