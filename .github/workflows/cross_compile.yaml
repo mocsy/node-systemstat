@@ -25,3 +25,4 @@ jobs:
             target/**/*.so
             target/**/*.dll
             target/**/*.dylib
+          retention-days: 5
