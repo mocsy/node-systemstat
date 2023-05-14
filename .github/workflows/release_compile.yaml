@@ -15,14 +15,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/download-artifact@v3
-        with:
-          path: target
 
       - name: Display structure of downloaded files
-        run: ls -R
+        run: |
+          mkdir target
+          mv linux-windows-targets/ target
+          mv mac-targets/ target
+          ls -R
 
       - name: Copy build artifacts from targets to node native dirs
         run: npm run copy
 
       - name: Publish --dry
-        run: npm i & npm publish --access public --dry-run
+        run: |
+          git config --global user.name 'Automated publish'
+          git config --global user.email 'mocsy@users.noreply.github.com'
+          npm i
+          npm publish --access public --dry-run
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
