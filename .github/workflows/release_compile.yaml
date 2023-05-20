@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/download-artifact@v3
+      - uses: actions/setup-node@v3
 
       - name: Display structure of downloaded files
         run: |
@@ -31,7 +32,7 @@ jobs:
         run: |
           git config --global user.name 'Automated publish'
           git config --global user.email 'mocsy@users.noreply.github.com'
-          npm i
+          npm ci
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
