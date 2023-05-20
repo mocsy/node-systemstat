@@ -26,11 +26,12 @@ jobs:
       - name: Copy build artifacts from targets to node native dirs
         run: npm run copy
 
-      - name: Publish --dry
+      # --dry-run
+      - name: Publish
         run: |
           git config --global user.name 'Automated publish'
           git config --global user.email 'mocsy@users.noreply.github.com'
           npm i
-          npm publish --access public --dry-run
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
